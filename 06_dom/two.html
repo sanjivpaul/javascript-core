@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Lecture 2</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wenesday</div>
+        <div class="day">Thusday</div>
+    </div>
+</body>
+<script>
+   const parent = document.querySelector(".parent");
+//    console.log(parent);
+//    console.log(parent.children[1])
+//    console.log(parent.children[1].innerHTML)
+
+    // access child throug parent
+   for(let i = 0; i<parent.children.length; i++){
+    const element = parent.children[i];
+        // console.log(element.innerHTML)
+        element.style.color = "orange"
+    }
+    parent.children[1].style.color = "red"
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+    // # querySelector is expensive task is going through thread and traverse complete dom tree
+    // we can access parent through child
+
+    const dayOne = document.querySelector(".day");
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement); // acess parent
+    // console.log(dayOne.nextElementSibling); // access next sibling
+
+    // # Nodelist: complete tree stucture
+    console.log("NODE: ", parent.childNodes );
+
+</script>
+</html>
